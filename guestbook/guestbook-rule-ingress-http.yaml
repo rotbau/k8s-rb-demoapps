@@ -1,0 +1,14 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: guestbook-ingress
+spec:
+  rules:
+  - host: guestbook.app.vdoubleb.lan
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: frontend
+          servicePort: 80
