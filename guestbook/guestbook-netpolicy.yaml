@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: NetworkPolicy
 metadata:
  name: gb-external-frontend
+ namespace: guestbook
 spec:
  podSelector:
   matchLabels:
@@ -16,6 +17,7 @@ apiVersion: extensions/v1beta1
 kind: NetworkPolicy
 metadata:
  name: gb-frontend-backend
+ namespace: guestbook
 spec:
  podSelector:
   matchLabels:
@@ -34,6 +36,7 @@ apiVersion: extensions/v1beta1
 kind: NetworkPolicy
 metadata:
  name: gb-backend-backend
+ namespace: guestbook
 spec:
  podSelector:
   matchLabels:
