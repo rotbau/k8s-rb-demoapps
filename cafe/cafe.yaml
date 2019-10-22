@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: coffee
-        image: harbor.rtbsystems.lan/nginx/hello:plain-text
+        image: nginxdemos/hello:plain-text
         ports:
         - containerPort: 80
 ---
@@ -34,6 +34,6 @@ spec:
     spec:
       containers:
       - name: tea 
-        image: harbor.rtbsystems.lan/nginx/hello:plain-text
+        image: nginxdemos/hello:plain-text
         ports:
         - containerPort: 80
