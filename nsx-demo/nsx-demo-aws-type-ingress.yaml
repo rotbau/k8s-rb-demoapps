@@ -1,4 +1,4 @@
-# This creates the Replication Controller for the Web-Server
+# This creates the Deployment for the Web-Server
 apiVersion: apps/v1
 kind: Deployment
 metadata:
