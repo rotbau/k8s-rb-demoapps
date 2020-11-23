@@ -1,15 +1,17 @@
-# This creates the Replication Controller for the Web-Server
-apiVersion: v1
-kind: ReplicationController
+# This creates the Deployment for the Web-Server
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: nsx-demo
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: nsx-demo
   template:
     metadata:
       labels:
         app: nsx-demo
-       # secgroup: web
     spec:
       containers:
       - name: nsx-demo
@@ -24,7 +26,7 @@ kind: Service
 metadata:
   name: nsx-demo
   labels:
-    app: mod2
+    app: nsx-demo
 spec:
   ports:
     # the port that this service should serve on
