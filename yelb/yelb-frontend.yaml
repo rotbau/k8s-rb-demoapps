@@ -10,7 +10,7 @@ spec:
       labels:
         app: yelb-ui
         tier: frontend
-        secgroup: web
+        secgroup: yelb-web
     spec:
       containers:
       - name: yelb-ui
@@ -25,7 +25,7 @@ metadata:
   labels:
     app: yelb-ui
     tier: frontend
-    secgroup: web
+    secgroup: yelb-web
 #  namespace: yelb
 spec:
   type: ClusterIP

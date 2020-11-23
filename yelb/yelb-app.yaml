@@ -10,7 +10,7 @@ spec:
       labels:
         app: yelb-appserver
         tier: middletier
-        secgroup: app
+        secgroup: yelb-app
     spec:
       containers:
       - name: yelb-appserver
@@ -25,7 +25,7 @@ metadata:
   labels:
     app: yelb-appserver
     tier: middletier
-    secgroup: app
+    secgroup: yelb-app
 #  namespace: yelb
 spec:
   type: ClusterIP

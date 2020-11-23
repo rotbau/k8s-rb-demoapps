@@ -10,6 +10,7 @@ spec:
       labels:
         app: redis-server
         tier: cache
+        secgroup: yelb-db
     spec:
       containers:
       - name: redis-server
@@ -24,6 +25,7 @@ metadata:
   labels:
     app: redis-server
     tier: cache
+    secgroup: yelb-db
 #  namespace: yelb
 spec:
   type: ClusterIP

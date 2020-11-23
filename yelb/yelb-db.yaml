@@ -10,7 +10,7 @@ spec:
       labels:
         app: yelb-db
         tier: backenddb
-        secgroup: db
+        secgroup: yelb-db
     spec:
       containers:
       - name: yelb-db
@@ -25,7 +25,7 @@ metadata:
   labels:
     app: yelb-db
     tier: backenddb
-    secgroup: db
+    secgroup: yelb-db
 #  namespace: yelb
 spec:
   type: ClusterIP
