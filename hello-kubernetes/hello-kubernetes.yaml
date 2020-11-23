@@ -26,7 +26,10 @@ spec:
     spec:
       containers:
       - name: hello-kubernetes
-        image: rotbau/hello-kubernetes:1.5
+        image: paulbouwer/hello-kubernetes:1.8
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
+        env:
+        - name: MESSAGE
+          value: Good Day!
