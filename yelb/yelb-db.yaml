@@ -5,6 +5,11 @@ metadata:
 #  namespace: yelb
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: yelb-db
+      tier: backenddb
+      secgroup: yelb-db
   template:
     metadata:
       labels:
