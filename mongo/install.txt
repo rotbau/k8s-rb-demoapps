@@ -1,0 +1,6 @@
+kubectl create -f mongodb-storageclass.yaml
+kubectl get storageclass mongodb-sc
+kubectl create -f mongodb-service.yaml
+openssl rand -base64 741 > key.txt
+kubectl create secret generic shared-bootstrap-data --from-file=internal-auth-mongodb-keyfile=key.txt
+kubectl create -f mongodb-statefulset.yaml

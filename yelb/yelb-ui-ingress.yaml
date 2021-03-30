@@ -46,7 +46,7 @@ metadata:
   name: yelb-ui-ingress
 spec:
   rules:
-    - host: yelb.app.rtbsystems.com
+    - host: yelb.ako.rtbsystems.com
       http:
         paths:
         - backend:
