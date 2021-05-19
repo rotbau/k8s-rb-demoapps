@@ -10,7 +10,7 @@
 ```kubectl apply -f mongo-statefulset.yaml```
 
 ### Define Mongo Replica Set and Administrator
-```kubectl exec -it mongod-0 -c mongod-container bash```
+```kubectl exec -it mongod-0 -c mongod-container -- bash```
 
 Bash Shell
 $ hostname -f
