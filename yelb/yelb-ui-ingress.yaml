@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yelb-ui
+  namespace: yelb
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: yelb-ui
+<<<<<<< HEAD:yelb/yelb-frontend.yaml
+=======
+      tier: frontend
+      secgroup: web
+>>>>>>> 76923a7e11e5b796a3817592ab0caf6c87fe6a01:yelb/yelb-ui-ingress.yaml
+  template:
+    metadata:
+      labels:
+        app: yelb-ui
+        tier: frontend
+        secgroup: yelb-web
+    spec:
+      containers:
+      - name: yelb-ui
+<<<<<<< HEAD:yelb/yelb-frontend.yaml
+        image: vdbharbor.vdoubleb.com/demo/yelb-ui:0.7
+#        image: mreferre/yelb-ui:0.3
+=======
+        image: mreferre/yelb-ui:0.7
+>>>>>>> 76923a7e11e5b796a3817592ab0caf6c87fe6a01:yelb/yelb-ui-ingress.yaml
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: yelb-ui
+  namespace: yelb
+  labels:
+    app: yelb-ui
+    tier: frontend
+    secgroup: yelb-web
+  namespace: yelb
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: yelb-ui
+    tier: frontend
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: yelb-ui-ingress
+  namespace: yelb
+spec:
+  rules:
+<<<<<<< HEAD:yelb/yelb-frontend.yaml
+    - host: yelb.app.vdoubleb.com
+=======
+    - host: yelb.ako.rtbsystems.com
+>>>>>>> 76923a7e11e5b796a3817592ab0caf6c87fe6a01:yelb/yelb-ui-ingress.yaml
+      http:
+        paths:
+        - backend:
+            service:
+              name:  yelb-ui
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
