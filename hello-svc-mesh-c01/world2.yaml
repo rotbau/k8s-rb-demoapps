@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: world-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: world-2
+  template:
+    metadata:
+      labels:
+        app: world-2
+        version: v1
+    spec:
+      containers:
+      - name: world-2
+        image: wardviaene/http-echo
+        env:
+        - name: TEXT
+          value: "from-cluster1"
+        ports:
+        - name: http
+          containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: world-2
+  labels:
+    app: world-2
+spec:
+  selector:
+    app: world-2
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+---
