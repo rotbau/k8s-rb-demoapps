@@ -4,7 +4,7 @@ metadata:
   name: hello
 spec:
   hosts:
-  - "hello.vdoubleb.com"
+  - "hello.ako.rtbsystems.com"
   gateways:
   - http-gateway.istio-system
   http:
