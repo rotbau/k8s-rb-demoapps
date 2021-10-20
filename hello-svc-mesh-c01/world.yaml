@@ -21,7 +21,7 @@ spec:
         - name: TEXT
           value: world-cluster1
         - name: NEXT
-          value: "world-2.hello.local:8080"
+          value: "world-2.hello.gns:8080"
         - name: LATENCY
           value: "0"
         ports:

@@ -1,0 +1,14 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: kuard-ingress
+spec:
+  virtualhost:
+    fqdn: kuard.vdoubleb.com
+  routes:
+  - conditions:
+    - prefix: /
+    services:
+    - name: kuard
+      port: 80
+
