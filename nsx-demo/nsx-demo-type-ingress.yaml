@@ -35,7 +35,7 @@ spec:
     app: nsx-demo
 ---
 # This creates the K8s Ingress Controller
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nsx-demo-ingress
@@ -44,6 +44,10 @@ spec:
   - host: nsx.app.rtbsystems.com
     http:
       paths:
-      - backend:
-          serviceName: nsx-demo
-          servicePort: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nsx-demo
+            port: 
+              number: 80
