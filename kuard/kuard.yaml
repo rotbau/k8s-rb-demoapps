@@ -4,6 +4,7 @@ metadata:
   labels:
     app: kuard
   name: kuard
+  namespace: kuard
 spec:
   replicas: 3
   selector:
@@ -24,6 +25,7 @@ metadata:
   labels:
     app: kuard
   name: kuard
+  namespace: kuard
 spec:
   ports:
   - port: 80
